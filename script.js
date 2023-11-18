@@ -4,14 +4,12 @@ const all = document.querySelector("#all")
 const searchBox = document.querySelector('.search-wrapper')
 const searchBtn = document.querySelector("#searchBtn")
 const input = document.querySelector('#inputBtn')
-const text = document.querySelector("#nameText")
+const nameText = document.querySelector("#nameText")
 const category = document.querySelector("#categoryText")
 const instruction = document.querySelector("#instructionText")
 const imgText = document.querySelector("#imgText")
 const test = document.querySelector("#test")
 const test1=document.querySelector("#test1")
-const text1 = document.querySelector('#text1')
-
 
 const handleFunction = () => {
     fetch('https://www.thecocktaildb.com/api/json/v2/1/popular.php')
@@ -48,7 +46,7 @@ searchBtn.addEventListener('click', () => {
             const drink = json.drinks[0]
             console.log(json.drinks)
             imgText.src=drink.strDrinkThumb
-            text.innerText = drink.strDrink
+            nameText.innerText = drink.strDrink
             category.innerText = drink.strCategory
             instruction.innerHTML=drink.strInstructions
 
@@ -90,4 +88,3 @@ test.addEventListener('click',()=>{
 
     }
 })
-
